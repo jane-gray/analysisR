@@ -1,5 +1,9 @@
-# 실행키
+#Notice :
+  #Test Branch (Test Branch can test all changes without effecting to the original files in main(master) branch)
+  #마스터 파일에 영향을 미치지 않고 파일을 수정 편집 실행 해보고싶으면, 새 브런치를 만들어서 테스트 후 변경사항을 마스터 브런치에 merge 시킬 수 있음
+  # Merge 과정은 Pull Request (PR)을 통해 가능 (Compare & Pull request 버튼)
 
+# 실행키
 # ; = finish command
 # control+enter = valid, shift+enter = enter
 # console 화면 비우기 = control+l (console에서)
