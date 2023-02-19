@@ -1,50 +1,53 @@
-#Notice :
-  #Test Branch (Test Branch can test all changes without effecting to the original files in main(master) branch)
-  #마스터 파일에 영향을 미치지 않고 파일을 수정 편집 실행 해보고싶으면, 새 브런치를 만들어서 테스트 후 변경사항을 마스터 브런치에 merge 시킬 수 있음
-  # Merge 과정은 Pull Request (PR)을 통해 가능 (Compare & Pull request 버튼)
+###### Basic Execution Key #####
+# ;             (finish command)
+# control+enter (Code Execution) 
+# shift+enter   (enter)
+# control+l     (console cleaning)
 
-# 실행키
-# ; = finish command
-# control+enter = valid, shift+enter = enter
-# console 화면 비우기 = control+l (console에서)
 
-# 연산자
-# 2x2x2 = 2^3 = 2**3 거듭제곱
-# %/% = 13%/%4 = 3 몫
-# %% = 13%%4 = 1 (rest) 나머지
-# 3 == 4 , false (is it same?) 같다
-# 3 != 4 , true  (is it not same?) 같지 않다
-# !(3==4), true ('3 is the same as 4' is not true) 괄호 안의 내용을 부정
-# 3>=2, true (3 is bigger than 2 or same as 2) 크거나 같다
-# & = A and B 조건 A와 B를 모두 만족
-# | = A or B 조건 A 또는 B를 만족
-# && = A and B (only for the first data of vector) 벡터의 첫번째 데이터에만
-# || = A and B (only for the first data of vector)
-# X = 5:7 X에 5,6,7 값을 대입
+##### Operating Keys #####
+# 2x2x2 = 2^3 = 2**3      (cubic)
+# %/% = 13%/%4 = 3        (rest)
+# %% = 13%%4 = 1          (rest)
+# 3 == 4 , false          (is it same?)
+# 3 != 4 , true           (is it not same?)
+# !(3==4), true           ('3 is the same as 4' is not true)
+# 3>=2, true              (3 is bigger than 2 or same as 2) 
+# &                       (A and B) 
+# |                       (A or B) 
+# &&                      (A and B only for the first data of vector) 
+# ||                      (A and B only for the first data of vector)
+# X = 5:7                 (set 5,6,7 into the value X)
 
-# 데이터 유형
-# mode () 함수는 데이터 유형 알려줌
-# is 함수/ is.numeric(x)는 x의 데이터 유형을 알려줌
-# as.numeric(x)는 x의 데이터유형을 수치형으로 바꾸는거
 
-# 벡터 만들기
-# C()함수는 여러 데이터를 가지는 벡터 생성
-# seq()함수는 주기성을 가지는 수치형 벡터 생성
-# seq(from=1, to=5, by=0.5)
-# sequence(5) 함수는 1부터 5까지 수치형 벡터 생성
-# rep() 함수는 데이터를 반복하여 벡터를 생성
-# rep("a", times=5)
-# rep(c("a","b"), times=5)
-# rep(c("a","b"), each=3)
-# rep(c("a","b"), times=c(10,5))
+##### Data type #####
+# mode(x)                 (What is data type of x?) 
+# is.numeric(x)           (Is data type of x numeric?)
+# is.caracter(x)
+# is.factor(x)
+# as.numeric(x)           (Change data tpye of x as numeric)
+# as.caracter(x)
+# as.factor(x)
 
-# 벡터 속성
-# length() 데이터 개수
-# names() = c("kim","lee") 벡터에 이름 부여
-# names() = NULL 벡터 이름 삭제
-# 벡터명[] 벡터 인덱싱
-# 벡터명[2:4] 2~4번째까지 데이터 추출
-# 벡터명[-c(1,2,3)] 1,2,3번째 데이터 빼고 추출
+
+
+##### Vector (vector is one line datset) #####
+# c()                              (make vector combining data)
+# seq()                            (make vector with sequance data)
+# seq(from=1, to=5, by=0.5)        (make vector including data from 1 to 5 by 0.5 sequence)
+# sequence(5)                      (make vector from 1 to 5)
+# rep()                            (make vector by repeating data)
+# rep("a", times=5)                (make vector by repeating a for 5 times)
+# rep(c("a","b"), times=5)         (make vector by repeating a,b for 3 times)
+# rep(c("a","b"), each=3)          (make vector by repeating a,b for 3 times each)
+# rep(c("a","b"), times=c(10,5))   (make vector by repeating a for 10 times, b for 5 times)  
+
+# length()                         (length of vector)
+# names() = c("kim","lee")         (give names to each data)
+# names() = NULL                   (delete names)
+# x[]                              (indexing certain data in vector x) 
+# x[2:4]                           (indexing data from 2 to 4 in vector x)
+# x[-c(1,2,3)]                     (indexing all data except data from 1 to 3 in vector x) 
 
 # factor 생성
 # factor()
