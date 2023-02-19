@@ -13,7 +13,8 @@ You can find :
 6) Diagnostic test - goodness-of-fit, Cook's distance, etc.
 7) Statistical hypothesis testing - Z-test, Chi-squared test, F-test, etc.
 
-Also, it provides some practical samples using open dataset.
+Also, it provides some practical samples using open dataset 
+(The prevalence of alcohol-related sexually transmitted diseases and sociodemographic characteristics of risk groups)
 
 **Any contributions are welcome !**
 
