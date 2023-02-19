@@ -22,4 +22,4 @@ Also, it provides some practical samples using open dataset
 
 
 
-*@social science, @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography @health data @public health @epidemiology*
+*@social science @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography @health data @public health @epidemiology*
