@@ -1,4 +1,4 @@
-# Analysis Using R for Social Scientist
+# Data Analysis Using R for Social Scientist
 
 ### This respiretory contains data analysis methodology using R for social scientist from beginning to advanced level.
 
