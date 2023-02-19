@@ -19,3 +19,7 @@ Also, it provides some practical samples using open dataset
 **Any contributions are welcome !**
 
 *Jiwon*
+
+
+@social science, @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography
+@health data @public health @epidemiology
