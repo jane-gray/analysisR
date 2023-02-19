@@ -22,4 +22,4 @@ Also, it provides some practical samples using open dataset
 
 
 
-<span style='color:Blue'> @social science, @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography @health data @public health @epidemiology </span>
+*@social science, @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography @health data @public health @epidemiology*
