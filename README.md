@@ -16,6 +16,6 @@ You can find :
 
 Also, it provides some practical samples using open dataset.
 
-Any contributions are welcome !
+**Any contributions are welcome !**
 
 *Jiwon*
