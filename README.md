@@ -1,9 +1,8 @@
 # Analysis Using R for Social Scientist
-### Data analysis using R for Social Scientist
 
-This respiretory contains data analysis methodology using R for social scientist from beginning to advanced level.
+### This respiretory contains data analysis methodology using R for social scientist from beginning to advanced level.
 
-It includes R codes as well as statistical explanation/interpretations. 
+### It includes R codes as well as statistical explanation/interpretations. 
   
 You can find :
 1) Basic codes
