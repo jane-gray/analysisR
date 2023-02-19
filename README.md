@@ -2,7 +2,7 @@
 
 ### This respiretory contains data analysis methodology using R for social scientist from beginning to advanced level.
 
-### It includes R codes as well as statistical explanation/interpretations. 
+### It includes R codes as well as statistical explanations/interpretations. 
   
 You can find :
 1) Basic codes
@@ -20,6 +20,6 @@ Also, it provides some practical samples using open dataset
 
 *Jiwon*
 
-
+/n
 
 *@social science @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography @health data @public health @epidemiology*
