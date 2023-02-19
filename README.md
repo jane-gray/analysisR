@@ -21,5 +21,5 @@ Also, it provides some practical samples using open dataset
 *Jiwon*
 
 
-@social science, @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography
-@health data @public health @epidemiology
+
+<span style='color:Blue'> @social science, @social scientist @quantitative sociology @statistics @sociology @psychology @economics @political science @computer science @demography @health data @public health @epidemiology </span>
