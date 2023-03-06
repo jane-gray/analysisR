@@ -65,3 +65,17 @@ plot(multilmalcool2) # values should be randomly scattered
 
 
 
+
+
+######################### Internal reliability ##############
+
+# Cronbach's alpha (0 = bad, 1 = good, 0.6 or higher = good)
+
+
+install.packages("ltm")
+library(ltm)
+
+sample <- data.frame(familydata$ALCOOL4, familydata$ALCOOL5, familydata$ALCOOL6)
+sample2 <- na.omit(sample)
+cronbach.alpha(sample2)
+
