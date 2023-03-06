@@ -201,3 +201,74 @@ scatter+geom_point()+labs(x="age",y="TV watching hours")
 # scatter plot with curved regression line example
 scatter+geom_point()+labs(x="age",y="TV watching hours")+geom_smooth(method="lm",colour="Red")
 
+
+
+
+
+
+
+############ Correlation analysis #########################
+#Pearson and spearman correlation coefficient
+library(Hmisc)
+alcoolautoritemere1 <- as.matrix(alcoolautoritemere) #make sure data as matrix for using rcorr function
+rcorr(alcoolautoritemere1, type=c("pearson","spearman"))
+
+CorrelationDATA<-familydata[,c("AUDIT","AUTORITEmere")]
+CorrelationDATA <- as.matrix(CorrelationDATA)
+rcorr(CorrelationDATA, type=c("pearson","spearman"))
+
+parentAUTO_co_r
+parentAUTO_co_r$P # exact p-value of corrleation
+parentAUTO_co_r$r # exact r of correlation
+
+#Pearson and spearman test with one or two-sides test
+#   less means negative one-side test, greater means positive one-side test
+#    cor.test can be implemented for only two variables
+cor.test(alcoolautorite$ALCOOLpro, alcoolautorite$AUTORITEmere, alternative="less", method="spearman") 
+
+spearmanALCOOL<-cor.test(familydata$AUDIT, familydata$AUTORITEmere, alternative="less", method="spearman") 
+
+
+#Kendall's test 
+cor(alcoolautoritemere2, method="kendall")
+cor(alcoolautoritemere2, method="pearson")
+cor(alcoolautoritemere2, method="spearman")
+
+cor(CorrelationDATA, method="spearman")
+
+#Coefficient of determination
+alcoolautoritemere2 <- alcoolautorite[,c("ALCOOLpro","AUTORITEmere")]
+cor(alcoolautoritemere2)           # Coefficient
+cor(alcoolautoritemere2)^2         # Coefficient of determination
+cor(alcoolautoritemere2)^2*100     # % Coefficient of determination 
+
+
+#Biserial correlation coefficient
+library(polycor)
+polyserial(alcoolautoritemereb$ALCOOLpro, alcoolautoritemereb$AUTORITEmereb, ML=TRUE, std.err=TRUE)
+
+
+#Partial correlation coefficient (control the third variable)
+install.packages("ggm")
+library(Hmisc)
+library(ggm)
+
+pc <- pcor(c("ALCOOLpro","AUTORITEmere","ALCOOL2"), var(alcool_age_auto))
+#ALCOOLpro and AUTORITemere are correlation value, ALCOOL2 is control value
+# 3rd, 4th, 5th control values can be added.
+
+pc^2 # R2 value
+
+pcor.test(pc,1,270) #p-value test (data, number of third variable, number of samples)
+
+
+#Comparison between correlation without or with controlling the third variable
+nonpc <- cor(alcool_age_auto) #without controlling 
+nonpc^2*100                   #without controlling (% coefficient of determinant)
+
+pc <- pcor(c("ALCOOLpro","AUTORITEmere","ALCOOL2"), var(alcool_age_auto)) #with controlling
+pc^2*100
+
+
+
+
