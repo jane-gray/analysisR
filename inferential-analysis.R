@@ -212,3 +212,85 @@ summary(logglm)
 
 
 
+
+
+############logistic regression with relevel factor levels (reference) ###############
+alcool_parent$AUDITb <- relevel(alcool_parent$AUDITb,"low-risk")
+levels(alcool_parent$AUDITb)
+
+
+ALCOOL.mother_glm <- glm(AUDITb ~ ALCOOLmereb+AUTORITEmereb+ETUDEmere+PROFmere2+SEXE, 
+                         data=alcool_parent, family = binomial(), na.action=na.exclude)
+
+ALCOOL.father_glm <- glm(AUDITb ~ ALCOOLpereb+AUTORITEpereb+ETUDEpere+PROFpere2+SEXE, 
+                         data=alcool_parent, family = binomial(), na.action=na.exclude)
+
+
+summary(ALCOOL.mother_glm)
+summary(ALCOOL.father_glm)
+
+
+
+TABAC.mother_glm <- glm(TABACencore ~ TABACmereb+AUTORITEmereb+ETUDEmere+PROFmere2+SEXE, 
+                        data=tabac_parent, family = binomial(), na.action=na.exclude)
+
+TABAC.father_glm <- glm(TABACencore ~ TABACpereb+AUTORITEpereb+ETUDEpere+PROFpere2+SEXE, 
+                        data=tabac_parent, family = binomial(), na.action=na.exclude)
+
+
+summary(TABAC.mother_glm)
+summary(TABAC.father_glm)
+
+
+# Odds ratio (crude OR vs adjusted OR)
+library(epiDisplay)
+logistic.display(ALCOOL.mother_glm)
+logistic.display(ALCOOL.father_glm)
+
+logistic.display(TABAC.mother_glm)
+logistic.display(TABAC.father_glm)
+
+
+
+
+
+
+
+########### logistic regression with backward approach #############
+
+##logistic regression
+
+ALCOOL.mother_glm <- glm(AUDITb ~ ALCOOLmereb+AUTORITEmereb+ETUDEmere+PROFmere2, 
+                         data=alcool_parent, family = binomial(), na.action=na.exclude)
+
+ALCOOL.father_glm <- glm(AUDITb ~ ALCOOLpereb+AUTORITEpereb+ETUDEpere+PROFpere2, 
+                         data=alcool_parent, family = binomial(), na.action=na.exclude)
+
+
+summary(ALCOOL.mother_glm)
+summary(ALCOOL.father_glm)
+
+
+# backward regression
+reduced.model = step(ALCOOL.mother_glm, direction = "backward") # redefining the regression model without non-significant variables
+summary(reduced.model)
+
+
+
+# Odds ratio formula
+ORtable=function(x,digits=2){
+  suppressMessages(a<-confint(x))
+  result=data.frame(exp(coef(x)),exp(a))
+  result =round(result,digits)
+  result=cbind(result,round(summary(x)$coefficient[,4],3))
+  colnames(result)=c("OR","2.5%","97.5","p")
+  result}
+
+ORtable(reduced.model) # It is the result of adjusted OR
+
+
+
+# Odds ratio (crude OR vs adjusted OR)
+library(epiDisplay)
+logistic.display(reduced.model)
+
