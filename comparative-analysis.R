@@ -51,25 +51,13 @@ p <- ggplot(ANOVAdata, aes(x=SEXE, y=AUDIT, fill=SEXE)) +
 
 
 
+################# Z-test for comparison the mean between two groups ###############
+install.packages("BSDA")
+library(BSDA)
 
-###################### Factorial analysis #############################
+describe(familydata$AUDIT) # sigma is the SD of population
 
-install.packages("FactoMineR")
-install.packages("Factoshiny")
-install.packages("FactoInvestigate")
-library(FactoMineR) ; library(Factoshiny) ; library(resshiny)
+z.test(x=female$AUDIT, y=male$AUDIT, mu=0, sigma.x=2.5, sigma.y=2.5)
 
-FAdata <- familydata2[,c("AUTORITEmereb","AUTORITEpereb","AUDITb","TABACencore","CANNABISencore")]
-
-FAdata$AUTORITEmereb <- as.factor(FAdata$AUTORITEmereb)
-FAdata$AUTORITEpereb <- as.factor(FAdata$AUTORITEpereb)
-FAdata$AUDITb <- as.factor(FAdata$AUDITb)
-FAdata$TABACencore <- as.factor(FAdata$TABACencore)
-FAdata$CANNABISencore <- as.factor(FAdata$CANNABISencore)
-
-FA <- MCA(FAdata, ncp = 4, graph = FALSE) # ncp means the number of axes
-
-FAresult<-Factoshiny(FA)
-resshiny = MCAshiny(FA)
 
 
