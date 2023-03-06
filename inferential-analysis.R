@@ -294,3 +294,25 @@ ORtable(reduced.model) # It is the result of adjusted OR
 library(epiDisplay)
 logistic.display(reduced.model)
 
+
+
+
+###################### Factorial analysis #############################
+
+install.packages("FactoMineR")
+install.packages("Factoshiny")
+install.packages("FactoInvestigate")
+library(FactoMineR) ; library(Factoshiny) ; library(resshiny)
+
+FAdata <- familydata2[,c("AUTORITEmereb","AUTORITEpereb","AUDITb","TABACencore","CANNABISencore")]
+
+FAdata$AUTORITEmereb <- as.factor(FAdata$AUTORITEmereb)
+FAdata$AUTORITEpereb <- as.factor(FAdata$AUTORITEpereb)
+FAdata$AUDITb <- as.factor(FAdata$AUDITb)
+FAdata$TABACencore <- as.factor(FAdata$TABACencore)
+FAdata$CANNABISencore <- as.factor(FAdata$CANNABISencore)
+
+FA <- MCA(FAdata, ncp = 4, graph = FALSE) # ncp means the number of axes
+
+FAresult<-Factoshiny(FA)
+resshiny = MCAshiny(FA)
