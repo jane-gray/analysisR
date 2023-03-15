@@ -203,7 +203,47 @@ for(i in 1:5){cat("hello",i,"\n")}    #put 1 to 5 into i and repeat "hello+i" an
 
 
 
-# Basic R packages for data analysis
+#### while function #####
+# basic while code
+i <- 1
+n <- 10
+while (i <= n) {                     # Repeating condition : prints (i) repeatedly, adding +1 until i is less than or equal to n(10)
+  print(i)
+  i = i + 1
+}
+
+
+# Using break & next while code
+i <- 1
+n <- 10
+while (i <= n) {
+  if(i == 9){
+    break                          # stop and exit if repeating output value is 9
+  }
+  if(i == 8){
+    i = i + 1                      # keep going if repeating output value is 8
+    next
+  }
+  print(i)
+  i = i + 1                        # Repeating condition : prints (i) repeatedly, adding +1
+}
+
+
+
+# nested while loop
+i=1
+while (i <= 4) {                   
+  j = 1                             # First repeating condition : prints (i+j) repeatedly, adding +1 until i is less than or equal to (4)
+  while(j < 2) {                    # Second repeating condition : put (j) repeatedly, adding j+1 until j is less than (2)
+    print(i + j)
+    j = j + 1
+  }
+  i = i + 1                         
+}
+
+
+
+###### Basic R packages for data analysis #####
 library(tidyverse)
 library(questionr)
 library(forcats)
