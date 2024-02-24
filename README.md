@@ -1,6 +1,6 @@
-# Data Analysis Using R for Social Scientists
+# Data Analysis Using R for Social Scientists in the Health Sector
 
-### This repository contains data analysis methodology using R for social scientists from beginning to advanced level.
+### This repository contains data analysis methodology using R for social scientists, especially in the Health Sector, from beginning to advanced level.
 
 ### It includes R codes as well as statistical explanations/interpretations. 
   
