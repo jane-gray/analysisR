@@ -1,4 +1,4 @@
-################################ << Parametic Test>> #########################
+################################ Assumption & Parametric Tests #########################
 ## 1. Normality test 
 # scatter plot with random number assignment and regression line
 
@@ -55,7 +55,7 @@ durbinWatsonTest(multilmalcool2) # 2 is the best, less than 1 or more than 3 is 
 mean(vif(multilmalcool2)) # 1 is the best
 
 
-# check for residual by eyes
+# check for residual by plot
 plot(multilmalcool2) # values should be randomly scattered
 
 
