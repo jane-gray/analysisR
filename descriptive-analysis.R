@@ -190,10 +190,6 @@ chisq.test(cont_table) #chi-squared test
 fisher.test(cont_table) #Fisher's exact test (At least one cell with expected frequency < 5)
 
 
-####### t-test (with continous variables, mean comparison)
-t.test(data$variable_numeric, data$variable_numeric2)
-
-
 
 ##### Chart #####
 
