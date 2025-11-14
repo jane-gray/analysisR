@@ -1,4 +1,4 @@
-#### Before taking comparative analysis, check Assumption & Parametric Tests
+################# Check assumptions and parameter tests before conducting comparative analysis #######################
 
 
 ##### t-test for mean comparison between two groups with continuous variables ####
