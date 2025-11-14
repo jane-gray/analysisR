@@ -154,7 +154,7 @@ plot(AA$x, AA$y, cex=AA$number*coeff_bigger,pch=16, col=rgb(0,0,1,0.5),
 
 
 
-##### frequency, percentage, mean #####
+##### Summary statistics, frequency, percentage, mean #####
 table(data$value)   #freaquency
 prop.table()*100    #percentage
 round(x,digits=1)   #round
@@ -171,9 +171,27 @@ prop.table(Base_HSM2$nom de variable)*100 # percentage
 cprop() #percentage of column
 rprop() #percentage of row
 
-summary(data$variable) #cross tab analysis (version 2)
-freq(data$variable, total=TRUE, sort="dec") #cross tab analysis (version3)
-CrossTable(data$variable1, data$variable2) #cross tab analysis (version4 - using gmodels package)
+summary(data$variable) # summary statistics and cross tab (ver.2)
+summary(data$variable[data$PAYS == "Coree"]) # summary statistics with conditional data (using only data where PAYS = 'Coree')
+sd(data$variable[data$PAYS == "Coree"], na.rm = TRUE) # standard deviation with conditional data (using only data where PAYS = 'Coree')
+mean(data$variable[data$PAYS == "Coree"], na.rm = TRUE) # mean with conditionnal data (using only data where PAYS = 'Coree')
+freq(data$variable, total=TRUE, sort="dec") #cross tab analysis (ver. 3)
+CrossTable(data$variable1, data$variable2) #cross tab analysis (ver. 4 - using gmodels package)
+
+
+
+
+###### chi-squared test, Fisher's exact test (with categorical variables) #######
+# chi-squared test (Cell expected frequency ≥ 5)
+cont_table <- table(data$AUDIT, data$age, data$PAYS)
+cont_table
+prop.table(cont_table, margin=2) ## column-wise percentage
+chisq.test(cont_table) #chi-squared test
+fisher.test(cont_table) #Fisher's exact test (At least one cell with expected frequency < 5)
+
+
+####### t-test (with continous variables, mean comparison)
+t.test(data$variable_numeric, data$variable_numeric2)
 
 
 
