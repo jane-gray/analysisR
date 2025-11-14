@@ -1,3 +1,5 @@
+############### Model diagnostics for regression model ########################
+
 ###################### Regression analysis #####################
 install.packages("car")
 install.packages("QuantPsyc")
