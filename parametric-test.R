@@ -19,17 +19,12 @@ histogram3 <- histogram2 + stat_function(fun=dnorm, args=list(mean = mean(family
 histogram3                                         
 histogram2
 
-# Shapiro-wilk normality test (if p<0.05, it is significantly different with normal distribution)
+# Shapiro-wilk normality test (if p<0.05, it is significantly different with normal distribution, using Non-parametric test)
 shapiro.test(familydata$AUDIT)
-
-# Kolmogorov-Smirnov test (if p<0.05, if is not a normal distribution)
-ks.test(familydata$AUDIT, y = "pnorm",mean = mean(familydata$AUDIT), sd=sd(familydata$AUDIT))
-
 
 # Skewness and Kurtosis
 library(pastecs)
 stat.desc(familydata$AUTORITEmere, basic=FALSE, norm=TRUE)
-
 
 # Q-Q plot
 library(ggplot2)
