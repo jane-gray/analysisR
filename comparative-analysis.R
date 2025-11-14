@@ -1,4 +1,16 @@
-################ ANOVA for comparison the mean between three+ groups ##############
+##### t-test for mean comparison between two groups with continuous variables ####
+
+# t-test when normal distribution + equal variances assumed (O)
+t.test(score ~ group, data = df, var.equal = TRUE)
+
+# t-test when normal distribution + equal variances assumed (x)
+t.test(score ~ group, data = df, var.equal = FALSE)
+
+# Wilcoxon rank-sum test when not normal distribution (non-parametric test)
+wilcox.test(score ~ group, data = df, exact = FALSE)
+
+
+################ ANOVA for comparison the mean between three + groups ##############
 # One-way ANOVA
 sample <- aov(AUDIT ~ AVISalcool, familydata2)
 summary(sample)
@@ -51,13 +63,17 @@ p <- ggplot(ANOVAdata, aes(x=SEXE, y=AUDIT, fill=SEXE)) +
 
 
 
-################# Z-test for comparison the mean between two groups ###############
-install.packages("BSDA")
-library(BSDA)
+################# Z-test for comparing proportions between two groups #################
+#### Two-proportion Z-test
+# Compare the proportions of a binary variable between two groups
+# prop.test performs the two-proportion Z-test using a chi-square statistic
+# (p < 0.05 indicates a statistically significant difference)
+pro_test = prop.test(x = c(pro_stu_fr, pro_stu_ko), n = c(pro_to_fr, pro_to_ko), p = NULL, alternative = "two.sided", correct = FALSE) 
 
-describe(familydata$AUDIT) # sigma is the SD of population
+# Extract the Z-score (prop.test returns a chi-square statistic with df = 1)
+z_value <- sqrt(pro_test$statistic)   # Z = sqrt(chi-square)
+z_value
 
-z.test(x=female$AUDIT, y=male$AUDIT, mu=0, sigma.x=2.5, sigma.y=2.5)
 
 
 
